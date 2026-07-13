@@ -5,10 +5,10 @@ const siteUrl = 'https://bido.ma';
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Bido — Intelligence des marchés publics au Maroc',
+    default: 'Analyseur IA des marchés publics au Maroc — Bido',
     template: '%s | Bido.ma',
   },
-  description: 'Bido centralise, analyse et qualifie les opportunités de la commande publique pour les entreprises marocaines.',
+  description: 'Bido centralise les appels d’offres et bons de commande, recherche dans les dossiers et aide les entreprises marocaines à qualifier chaque marché public.',
   applicationName: 'Bido',
   authors: [{ name: 'Bido.ma', url: siteUrl }],
   creator: 'Bido.ma',
@@ -19,13 +19,13 @@ export const metadata = {
     locale: 'fr_MA',
     url: siteUrl,
     siteName: 'Bido.ma',
-    title: 'Bido — Intelligence des marchés publics au Maroc',
-    description: 'Détectez, qualifiez et analysez les opportunités de la commande publique avec méthode.',
+    title: 'Analyseur IA des marchés publics au Maroc — Bido',
+    description: 'Recherchez, qualifiez et analysez les appels d’offres et bons de commande avec une IA reliée aux dossiers.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bido — Intelligence des marchés publics',
-    description: 'Une plateforme opérationnelle pour les entreprises marocaines.',
+    title: 'Analyseur IA des marchés publics au Maroc — Bido',
+    description: 'Une plateforme de veille et d’analyse des opportunités publiques conçue pour les entreprises marocaines.',
   },
   robots: { index: true, follow: true },
 };
