@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import {
-  ArrowRight, Bot, Building2, Check, CheckCircle2, ChevronDown, CircleDollarSign,
+  ArrowRight, BellRing, Bot, Building2, Check, CheckCircle2, ChevronDown, CircleDollarSign,
   Clock3, Cookie, FileCheck2, FileSearch, Globe2, LayoutDashboard, Menu, MessageSquareText,
   MoveUpRight, Search, Send, ShieldCheck, Sparkles, Target, UsersRound, X, Zap,
 } from 'lucide-react';
