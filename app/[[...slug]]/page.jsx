@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import App from '../../src/App';
 import { legalPages, productPages, solutionPages } from '../../src/config';
 import { localizedContent, localizedHref } from '../../src/localized-content';
@@ -80,5 +80,6 @@ export default async function Page({ params }) {
   const { slug = [] } = await params;
   const { locale, pathname } = resolveLocale(slug);
   if (!staticPages[pathname]) notFound();
+  if (pathname === '/demo') redirect('https://app.bido.ma/');
   return <App initialPath={pathname} initialLocale={locale} />;
 }

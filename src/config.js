@@ -8,7 +8,8 @@ import {
 export const company = {
   name: 'Bido', domain: 'bido.ma', email: 'contact@bido.ma', support: 'support@bido.ma',
   phone: '+212 5 XX XX XX XX', city: 'Agadir, Maroc',
-  loginUrl: '#', signupUrl: '/demo', statusUrl: '#',
+  appUrl: 'https://app.bido.ma/', loginUrl: 'https://app.bido.ma/', signupUrl: 'https://app.bido.ma/',
+  demoUrl: 'https://app.bido.ma/', statusUrl: '#',
 };
 
 export const productPages = {
