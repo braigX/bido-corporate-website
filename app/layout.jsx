@@ -5,10 +5,10 @@ const siteUrl = 'https://bido.ma';
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Analyseur IA des marchés publics au Maroc — Bido',
+    default: 'Bido — Intelligence des marchés publics au Maroc',
     template: '%s | Bido.ma',
   },
-  description: 'Bido centralise les appels d’offres et bons de commande, recherche dans les dossiers et aide les entreprises marocaines à qualifier chaque marché public.',
+  description: 'Bido centralise, analyse et qualifie les opportunités de la commande publique pour les entreprises marocaines.',
   applicationName: 'Bido',
   authors: [{ name: 'Bido.ma', url: siteUrl }],
   creator: 'Bido.ma',
@@ -19,13 +19,13 @@ export const metadata = {
     locale: 'fr_MA',
     url: siteUrl,
     siteName: 'Bido.ma',
-    title: 'Analyseur IA des marchés publics au Maroc — Bido',
-    description: 'Recherchez, qualifiez et analysez les appels d’offres et bons de commande avec une IA reliée aux dossiers.',
+    title: 'Bido — Intelligence des marchés publics au Maroc',
+    description: 'Détectez, qualifiez et analysez les opportunités de la commande publique avec méthode.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Analyseur IA des marchés publics au Maroc — Bido',
-    description: 'Une plateforme de veille et d’analyse des opportunités publiques conçue pour les entreprises marocaines.',
+    title: 'Bido — Intelligence des marchés publics',
+    description: 'Une plateforme opérationnelle pour les entreprises marocaines.',
   },
   robots: { index: true, follow: true },
 };
@@ -45,11 +45,10 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </head>
       <body>
-        <a className="skip-link" href="#main">Aller au contenu</a>
         {children}
       </body>
     </html>

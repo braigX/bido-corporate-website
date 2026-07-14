@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   ArrowRight, BellRing, Bot, Building2, Check, CheckCircle2, ChevronDown, CircleDollarSign,
   Clock3, Cookie, FileCheck2, FileSearch, Globe2, LayoutDashboard, Menu, MessageSquareText,
   MoveUpRight, Search, Send, ShieldCheck, Sparkles, Target, UsersRound, X, Zap,
 } from 'lucide-react';
 import { company, faq, legalPages, nav, productPages, solutionPages } from './config';
+import LocalizedApp from './LocalizedApp';
+import { localizedHref } from './localized-content';
 
 const ui = {
   fr: { demo: 'Demander une démo', login: 'Se connecter', menu: 'Menu', close: 'Fermer', eyebrow: 'Intelligence des marchés publics', hero: 'Le premier analyseur IA des marchés publics au Maroc', sub: 'Bido détecte, qualifie et structure les opportunités de la commande publique pour transformer votre veille en décisions exploitables.', primary: 'Découvrir Bido', secondary: 'Voir comment ça marche', trusted: 'Conçu pour les équipes qui répondent avec méthode', language: 'Langue' },
@@ -144,4 +146,6 @@ function Footer(){return <footer><div className="container footer-main"><div cla
 
 function PageContent({pathname,locale}){if(pathname==='/')return <Home locale={locale}/>;if(productPages[pathname])return <StandardPage data={productPages[pathname]}/>;if(solutionPages[pathname])return <SolutionPage data={solutionPages[pathname]}/>;if(legalPages[pathname])return <LegalPage data={legalPages[pathname]}/>;if(pathname==='/tarifs')return <Pricing/>;if(pathname==='/a-propos')return <About/>;if(pathname==='/contact')return <Contact/>;if(pathname==='/demo')return <Contact demo/>;if(pathname==='/faq')return <main id="main"><PageIntro eyebrow="FAQ" title="Les questions importantes, traitées clairement." text="Produit, données, intelligence artificielle et déploiement : voici les réponses disponibles avant le lancement."/><FAQBlock/></main>;if(pathname==='/ressources'||pathname==='/blog')return <Resources/>;if(pathname==='/ressources/veille-structuree'||pathname==='/ressources/article')return <Article/>;return <NotFound/>}
 
-export default function App({initialPath='/'}){const [locale,setLocale]=useState('fr');const pathname=usePathname()||initialPath;useEffect(()=>{window.scrollTo(0,0)},[pathname]);useEffect(()=>{document.documentElement.lang=locale;document.documentElement.dir=locale==='ar'?'rtl':'ltr'},[locale]);return <><Header locale={locale} setLocale={setLocale}/><PageContent pathname={pathname} locale={locale}/><Footer/><CookieBanner/></>}
+function FrenchApp({initialPath='/'}){const pathname=usePathname()||initialPath;const router=useRouter();const changeLocale=(next)=>router.push(localizedHref(next,initialPath));useEffect(()=>{window.scrollTo(0,0)},[pathname]);useEffect(()=>{document.documentElement.lang='fr';document.documentElement.dir='ltr'},[]);return <><a className="skip-link" href="#main">Aller au contenu</a><Header locale="fr" setLocale={changeLocale}/><PageContent pathname={initialPath} locale="fr"/><Footer/><CookieBanner/></>}
+
+export default function App({initialPath='/',initialLocale='fr'}){if(initialLocale!=='fr')return <LocalizedApp locale={initialLocale} pathname={initialPath}/>;return <FrenchApp initialPath={initialPath}/>}
