@@ -17,7 +17,7 @@ export const localizedContent = {
       hero: 'Morocco’s first AI-powered public procurement analyzer',
       sub: 'Bido detects, qualifies and structures public procurement opportunities, turning fragmented monitoring into clear, actionable decisions.',
       primary: 'Discover Bido', secondary: 'See how it works',
-      notice: 'Early access is now open to Moroccan businesses.', noticeCta: 'Join the waitlist',
+      noticeBadge: 'Special offer', notice: 'Get 20% off your Bido subscription this month.', noticeCta: 'Claim the offer',
       proof: 'Built in Morocco for the operational realities of Moroccan businesses.',
       trusted: 'Designed for teams that bid methodically',
       problemLabel: 'The challenge', problemTitle: 'The right opportunity exists. The challenge is seeing it in time.',
@@ -109,7 +109,7 @@ export const localizedContent = {
     home: {
       eyebrow: 'ذكاء الصفقات العمومية', hero: 'أول محلّل بالذكاء الاصطناعي للصفقات العمومية في المغرب',
       sub: 'تكتشف Bido فرص الصفقات العمومية وتؤهلها وتنظمها، لتحول عملية الرصد المتفرقة إلى قرارات واضحة وقابلة للتنفيذ.',
-      primary: 'اكتشف Bido', secondary: 'كيف تعمل المنصة', notice: 'فُتح باب الولوج المبكر أمام المقاولات المغربية.', noticeCta: 'انضم إلى قائمة الانتظار',
+      primary: 'اكتشف Bido', secondary: 'كيف تعمل المنصة', noticeBadge: 'عرض خاص', notice: 'استفد من خصم 20٪ على اشتراك Bido خلال هذا الشهر.', noticeCta: 'استفد من العرض',
       proof: 'منصة مطورة في المغرب لتلائم الواقع العملي للمقاولات المغربية.', trusted: 'مصممة للفرق التي تستجيب بمنهجية',
       problemLabel: 'التحدي', problemTitle: 'الفرصة المناسبة موجودة. التحدي هو اكتشافها في الوقت المناسب.',
       problemLead: 'لا ينبغي لفرقكم أن تقضي يومها في البحث وفتح الملفات وفرزها، بل في تحديد الفرص التي تستحق خبرتها.',
