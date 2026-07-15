@@ -54,7 +54,7 @@ function Header({ locale, setLocale }) {
   </>;
 }
 
-function Notice() { return <div className="notice"><span>Nouveau</span><p>La liste d’attente Bido est ouverte aux entreprises marocaines.</p><Link href={company.appUrl}>Rejoindre l’accès anticipé <ArrowRight size={14}/></Link></div>; }
+function Notice() { return <div className="notice"><span>Offre spéciale</span><p>Profitez de 20 % de réduction sur votre abonnement Bido ce mois-ci.</p><Link href={company.appUrl}>Activer l’offre <ArrowRight size={14}/></Link></div>; }
 
 function ProductMockup() {
   const opportunities = [
