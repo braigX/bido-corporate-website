@@ -40,7 +40,7 @@ export const solutionPages = {
 export const nav = [
   ['Produit', [['Vue d’ensemble','/plateforme'],['Opportunités','/opportunites'],['Analyse des dossiers','/analyse-appels-offres'],['Documents','/analyse-documents'],['Agents IA','/agents-ia'],['Collaboration','/collaboration'],['Alertes','/alertes'],['Reporting','/reporting'],['Sécurité','/securite']]],
   ['Solutions', [['PME','/solutions/pme'],['Entreprises','/solutions/entreprises'],['Bid managers','/solutions/bid-managers'],['Consultants','/solutions/consultants'],['BTP & ingénierie','/secteurs/btp']]],
-  ['Tarifs','/tarifs'], ['Ressources','/ressources'], ['Entreprise','/a-propos'],
+  ['Tarifs','/tarifs'], ['Blog','/blog'], ['Entreprise','/a-propos'],
 ];
 
 export const legalPages = {

@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation';
 import App from '../../src/App';
 import { legalPages, productPages, solutionPages } from '../../src/config';
 import { localizedContent, localizedHref } from '../../src/localized-content';
+import { blogContent, blogSlugs, findBlogArticle } from '../../src/blog-content';
 
 const staticPages = {
   '/': ['Bido — Intelligence des marchés publics au Maroc', 'Détectez, qualifiez et analysez les opportunités de la commande publique avec méthode.'],
@@ -15,6 +16,8 @@ const staticPages = {
   '/ressources/veille-structuree': ['Structurer une veille marchés publics en 6 étapes', 'Une méthode pragmatique pour construire une veille marchés publics exploitable.'],
   '/ressources/article': ['Guide Bido', 'Méthodes opérationnelles pour les équipes de réponse aux marchés publics.'],
 };
+
+for (const slug of blogSlugs) staticPages[`/blog/${slug}`] = [findBlogArticle('fr', slug).title, findBlogArticle('fr', slug).excerpt];
 
 for (const [path, data] of Object.entries(productPages)) staticPages[path] = [data.title, data.text];
 for (const [path, data] of Object.entries(solutionPages)) staticPages[path] = [data[1], data[2]];
@@ -43,6 +46,7 @@ function resolveLocale(slug = []) {
 function localizedEntry(locale, pathname) {
   if (locale === 'fr') return staticPages[pathname];
   const content = localizedContent[locale];
+  if (pathname.startsWith('/blog/')) { const article=findBlogArticle(locale,pathname.split('/').pop()); return article&&[article.title,article.excerpt]; }
   if (content.products[pathname]) return [content.products[pathname][1], content.products[pathname][2]];
   if (content.solutions[pathname]) return [content.solutions[pathname][1], content.solutions[pathname][2]];
   if (content.legal[pathname]) return [content.legal[pathname][0], content.legal[pathname][1]];
@@ -72,7 +76,7 @@ export async function generateMetadata({ params }) {
       canonical,
       languages: { 'fr-MA': localizedHref('fr', pathname), 'en-MA': localizedHref('en', pathname), 'ar-MA': localizedHref('ar', pathname), 'x-default': localizedHref('fr', pathname) },
     },
-    openGraph: { title, description, url: canonical, locale: locale === 'ar' ? 'ar_MA' : locale === 'en' ? 'en_MA' : 'fr_MA' },
+    openGraph: { title, description, url: canonical, locale: locale === 'ar' ? 'ar_MA' : locale === 'en' ? 'en_MA' : 'fr_MA', type: pathname.startsWith('/blog/') ? 'article' : 'website', images: pathname.startsWith('/blog/') ? [{ url: findBlogArticle(locale, pathname.split('/').pop()).image }] : undefined },
   };
 }
 

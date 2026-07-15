@@ -1,11 +1,12 @@
 import { legalPages, productPages, solutionPages } from '../../src/config';
 import { localizedHref } from '../../src/localized-content';
+import { blogSlugs } from '../../src/blog-content';
 
 export const dynamic = 'force-static';
 
 const baseUrl = 'https://bido.ma';
 const lastModified = '2026-07-14';
-const corePaths = ['/', '/tarifs', '/a-propos', '/contact', '/faq', '/ressources', '/blog', '/ressources/veille-structuree'];
+const corePaths = ['/', '/tarifs', '/a-propos', '/contact', '/faq', '/ressources', '/blog', '/ressources/veille-structuree', ...blogSlugs.map((slug)=>`/blog/${slug}`)];
 
 function escapeXml(value) {
   return value.replace(/[<>&"']/g, (character) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[character]);
