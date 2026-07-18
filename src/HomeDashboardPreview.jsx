@@ -1,11 +1,9 @@
 'use client';
 
-import { Sparkles } from 'lucide-react';
-
 const views = {
-  hero: { src:'/product/opportunities.webp', position:'center top' },
-  discovery: { src:'/product/opportunity-grid.webp', position:'center center' },
-  documents: { src:'/product/opportunity-details.webp', position:'center center' },
+  hero: { src:'/product/home-hero.webp' },
+  discovery: { src:'/product/home-discovery.webp' },
+  documents: { src:'/product/home-documents.webp' },
 };
 
 const labels = {
@@ -16,5 +14,5 @@ const labels = {
 
 export default function HomeDashboardPreview({ variant, locale='fr' }) {
   const view=views[variant]; const label=labels[locale][variant];
-  return <figure className={`home-dashboard-shot shot-${variant}`}><div className="shot-toolbar"><div><i/><i/><i/></div><span>app.bido.ma</span><b><Sparkles/>{label}</b></div><div className="shot-viewport"><img src={view.src} alt={label} style={{objectPosition:view.position}}/></div></figure>;
+  return <figure className={`home-dashboard-shot shot-${variant}`}><img src={view.src} alt={label}/></figure>;
 }
